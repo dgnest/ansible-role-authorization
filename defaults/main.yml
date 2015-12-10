@@ -1,0 +1,5 @@
+---
+
+# defaults file for authorization
+
+authorization_key_dir: "~/.ssh/project"
