@@ -1,10 +1,9 @@
 ---
 
-
 - name: Copy system users deploy keys
   sudo_user: "{{ user }}"
   copy: src="{{ item.src }}" dest="{{ item.path }}"
-  with_items: authorization.sophimania.key_files
+  with_items: authorization.key_files
   tags:
     - system_users
     - public_keys
@@ -15,7 +14,7 @@
   file: path={{ item.path }} state={{ item.state }}
         owner={{ item.owner }}
         mode=0600
-  with_items: authorization.sophimania.key_files
+  with_items: authorization.key_files
   tags:
     - system_users
     - public_keys
