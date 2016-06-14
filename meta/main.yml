@@ -3,7 +3,7 @@ galaxy_info:
   author: Luis Mayta
   description: Ansible role to Added keys  Authorization
   company: DgNest
-  version: 0.0.1
+  version: 0.0.2
   license: Mit
   min_ansible_version: 1.2
   platforms:
