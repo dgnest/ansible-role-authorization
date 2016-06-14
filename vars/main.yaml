@@ -1,3 +1,5 @@
 ---
 
 # vars private file for authorization
+_authorization_package_dependencies:
+  - git
