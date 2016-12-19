@@ -17,7 +17,7 @@
     state: present
   register: install_authorization_package_dependencies
   when: _authorization_package_dependencies is defined
-  with_items: _authorization_package_dependencies
+  with_items: "{{ _authorization_package_dependencies | default([]) }}"
   tags:
     - apt
     - dependencies
