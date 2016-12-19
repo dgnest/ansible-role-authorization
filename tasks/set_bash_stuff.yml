@@ -9,7 +9,7 @@
     group: "{{ item.name }}"
     mode: 0644
   when: item.name in authorized_users
-  with_items: system_users
+  with_items: "{{ system_users | default({}) }}"
   tags:
     - bash_profile
 
@@ -21,6 +21,6 @@
     group: "{{ item.name }}"
     mode: 0644
   when: item.name in authorized_users
-  with_items: system_users
+  with_items: "{{ system_users | default({}) }}"
   tags:
     - bashrc
