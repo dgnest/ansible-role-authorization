@@ -1,6 +1,7 @@
 ---
 
 - name: Copy system users deploy keys
+  become: true
   become_user: "{{ user }}"
   copy: src="{{ item.src }}" dest="{{ item.path }}"
   with_items: "{{ authorization.key_files | default({}) }}"
@@ -10,6 +11,7 @@
     - deployment_keys
 
 - name: Correct SSH Deploy key permissions
+  become: true
   become_user: "{{ user }}"
   file: path={{ item.path }} state={{ item.state }}
         owner={{ item.owner }}
