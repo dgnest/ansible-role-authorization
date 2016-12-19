@@ -2,7 +2,7 @@
 # task file for dgnest.authorization
 
 - name: Update package repositories
-  sudo: yes
+  become: true
   apt:
     update_cache: True
   when: ansible_distribution == "Ubuntu"
@@ -11,7 +11,7 @@
     - update_cache
 
 - name: Install authorization package dependencies
-  sudo: yes
+  become: true
   apt:
     name: "{{ item }}"
     state: present
@@ -22,4 +22,3 @@
     - apt
     - dependencies
 - debug: var=install_authorization_package_dependencies.stdout_lines
-
