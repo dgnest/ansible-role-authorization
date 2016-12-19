@@ -6,7 +6,7 @@
 #     name: "{{ item.name }}"
 #     state: "{{ 'present' if item.name in authorized_users else 'absent' }}"
 #     shell: "/bin/bash"
-#   with_items: system_users
+#   with_items: "{{ system_users | default({}) }}"
 #   tags:
 #     - create_users
 #     - system_users
@@ -19,7 +19,7 @@
 #     group: root
 #     mode: 0440
 #   when: item.name in sudo_users
-#   with_items: system_users
+#   with_items: "{{ system_users | default({}) }}"
 #   tags:
 #     - sudoers
 #     - system_users
@@ -28,7 +28,7 @@
 #   file:
 #     path: /etc/sudoers.d/{{ item.name }}
 #     state: "{{ 'file' if item.name in sudo_users else 'absent' }}"
-#   with_items: system_users
+#   with_items: "{{ system_users | default({}) }}"
 #   tags:
 #     - sudoers
 #     - system_users

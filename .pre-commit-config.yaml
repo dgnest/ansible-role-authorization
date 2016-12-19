@@ -1,5 +1,5 @@
 -   repo: git@github.com:pre-commit/pre-commit-hooks
-    sha: 4c90c9557da7c0d695d6a729bae8b1de4e496cbf
+    sha: 96fb7fa10f2f4c11ed33482a9ad7474251e5e97f
     hooks:
     -   id: detect-private-key
         files: ^(?!\.?git-crypt)
@@ -38,7 +38,7 @@
     -   id: scss-lint
         files: \.(scss)$
 -   repo: git@github.com:pre-commit/pre-commit
-    sha: bbf1f62ed686a3e321280703a227fbd957e76151
+    sha: v0.9.4
     hooks:
     -   id: validate_config
     -   id: validate_manifest
