@@ -4,4 +4,5 @@
 # shellcheck source=/dev/null
 [ -r "script/bootstrap.sh" ] && source "script/bootstrap.sh"
 
-grip --pass "${GITHUB_API_TOKEN}" "${GRIP_PORT}"
+ansible-playbook tests/test.yaml -i tests/inventory --syntax-check
+ansible-playbook -i tests/inventory tests/test.yaml --connection=local
